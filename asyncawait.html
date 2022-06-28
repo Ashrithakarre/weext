@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASYNC/AWAIT</title>
+    </head>
+    <body>
+        <script>
+            function findNumber(n){
+                return new Promise((resolve,reject)=>{
+                    if(!isNaN(n)){
+                        resolve("It is a number")
+                    }
+                    else{
+                        reject("It is not a number")
+                    }
+                })
+            }
+            async function findResult(n){
+                try{
+                    var result=await findNumber(n);
+                    console.log(result);
+                }
+                catch(e){
+                    console.log(e);
+                }
+            }
+            findResult("57")
+        </script>
+    </body>
+</html>
